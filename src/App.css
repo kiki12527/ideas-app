@@ -1,0 +1,73 @@
+/* src/App.css */
+
+/* Custom styles for navigation links */
+.nav-link {
+  @apply text-gray-600 hover:text-orange-500 transition-colors duration-200;
+}
+
+.nav-link.active {
+  @apply font-bold text-orange-500;
+}
+
+/* Custom styles for pagination buttons (still defined but not used in infinite scroll UI) */
+.btn-page {
+  @apply mx-1 px-3 py-1 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors duration-200;
+}
+
+.btn-page.active {
+  @apply bg-orange-500 text-white;
+}
+
+/* Custom styles for select dropdowns */
+.select {
+  @apply border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500;
+}
+
+/* Custom styles for post cards */
+.card {
+  @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 ease-in-out; /* Added transition */
+  /* Enhanced shadow and hover effect */
+  @apply hover:shadow-xl hover:scale-[1.02]; /* Slightly lift and scale on hover */
+}
+
+.card-img {
+  @apply w-full h-full object-cover;
+}
+
+/* Aspect ratio for images (if @tailwindcss/aspect-ratio plugin is not used) */
+.aspect-w-16 {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.aspect-h-9 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* For the 3-line ellipsis effect (if @tailwindcss/line-clamp plugin is not used) */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Custom style for slanted banner bottom */
+/* This creates the white slanted shape at the bottom of the orange banner overlay */
+.banner-overlay::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6rem; /* Adjust height as needed to match design */
+    background-color: white;
+    transform: skewY(3deg);
+    transform-origin: bottom left;
+    z-index: 10; /* Ensure it's above the parallax image but below content */
+}
