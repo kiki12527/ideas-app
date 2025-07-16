@@ -53,8 +53,7 @@ export default function App() {
     setError(null); // Clear any previous errors
 
     try {
-      const url = `/api/ideas?page[number]=${pageNumber}&page[size]=${pageSize}&append[]=small_image&append[]=medium_image&sort=${sortOrder}`;
-
+      const url = `https://suitmedia-backend.suitdev.com/api/ideas?page[number]=${pageNumber}&page[size]=${pageSize}&append[]=small_image&append[]=medium_image&sort=${sortOrder}`;
       const response = await fetch(url, {
         method: 'GET',
         headers: {
